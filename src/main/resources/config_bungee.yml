@@ -100,7 +100,6 @@ addons:
     someaddon: recommend
     someotheraddon: disable
 
-# This feature does not work at the moment. I suspect a bug in the server api. I'm investigating it
 permissions:
   # Enable or disable specific permissions of the labymod or it's addons
   enabled: false
