@@ -36,6 +36,18 @@ permissions:
   labyutils.reload:
     default: op
     description: Lets the player reload the config with /labyutils
+  labyutils.voice:
+    default: op
+    description: Gives access to the VoiceChat command
+  labyutils.voice.mute.permanent:
+    default: op
+    description: Lets the player mute other players permanently
+  labyutils.voice.mute.temporary:
+    default: op
+    description: Lets the player mute other players temporarily
+  labyutils.voice.unmute:
+    default: op
+    description: Lets the player unmute other players
 
 commands:
   labyinfo:
@@ -44,3 +56,6 @@ commands:
   labyutils:
     description: Reloads the plugin config
     permission: labyutils.reload
+  labyvoice:
+    description: Lets you mute or unmute players in VoiceChat
+    permission: labyutils.voice
