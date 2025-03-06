@@ -14,6 +14,7 @@
     <properties>
         <java.version>17</java.version>
         <labymod.serverApiVersion>1.0.6</labymod.serverApiVersion>
+        <labymod.voiceChatIntegrationVersion>1.0.1</labymod.voiceChatIntegrationVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -96,6 +97,11 @@
             <groupId>net.labymod.serverapi</groupId>
             <artifactId>server-bungeecord</artifactId>
             <version>${labymod.serverApiVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.labymod.serverapi.integration</groupId>
+            <artifactId>voicechat</artifactId>
+            <version>${labymod.voiceChatIntegrationVersion}</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains</groupId>
