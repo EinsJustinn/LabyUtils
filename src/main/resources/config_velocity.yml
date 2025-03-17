@@ -1,0 +1,119 @@
+############################################################
+#                                                          #
+#                  LabyUtils (Velocity)                    #
+#                                                          #
+#    Simple plugin to manage LabyMod users your server!    #
+#                                                          #
+# Issues: https://github.com/RappyPlugins/LabyUtils/issues #
+#                                                          #
+############################################################
+
+# Customize the plugin prefix for all messages sent by the plugin
+prefix: '§8[§9LABY§8] '
+
+disallow:
+  # Enable this to prevent players from joining with LabyMod
+  enabled: false
+  kickMessage: |-
+    §c§lKICKED!
+    
+    §bReason: §7You are not allowed to join this server using §9LabyMod§7!
+
+welcome:
+  # Enables a welcome message specifically for LabyMod players
+  enabled: false
+  # Sends a log message into the console when a LabyMod player joins
+  log: true
+
+  # To use the prefix just append <prefix>
+  message: |-
+    <prefix>§7Thanks for using LabyMod!
+    <prefix>§7§oLabyUtils on BungeeCord
+
+banner:
+  # Set this to true if you want to enable the banner above the tablist
+  enabled: false
+  # The aspect ratio of the image must be 5:1 and the recommended resolution is 1280x256 pixels.
+  url: 'https://example.com/banner.png'
+
+flags:
+  # Set this to true if you want to enable country flags being displayed next to player names in the tablist
+  enabled: false
+
+subtitles:
+  # Set this to true if you want to display "subnametags" for players with specific permissions
+  enabled: false
+  subtitles:
+    owner:
+      text: '§4Server owner'
+      size: 0.8
+      permission: group.owner
+
+interactions:
+  enabled: false
+
+  bullets:
+    # Of course you can create more objects here.
+    # Note: The object keys (in this case 'test', 'ban' and 'head') do nothing. They're just seperators
+    test:
+      title: Bullet point 1
+      # The permission they need to have on the server to see the bullet point. Leave out to disable
+      permission: someplugin.somepermission
+      # RUN_COMMAND - Executes the value as command
+      # CLIPBOARD - Copies the value to the clipboard.
+      # SUGGEST_COMMAND - Opens the chat and suggests the value
+      # OPEN_BROWSER - Opens the web browser with the value as URL
+      type: RUN_COMMAND
+      # The value can contain the following placeholders (addons may add custom placeholders):
+      # - {name} - Will be replaced with the player's name
+      # - {uuid} - Will be replaced with the player's unique id.
+      value: '/somecommand'
+    ban:
+      title: Ban player
+      permission: someplugin.ban
+      type: RUN_COMMAND
+      value: '/ban {name}'
+    head:
+      title: Copy head url
+      type: CLIPBOARD
+      value: 'https://mc-heads.net/head/{uuid}'
+
+addons:
+  # Set to false to disable this completely
+  enabled: false
+  # The kick message if the player does not have all required addons
+  # "%s" is the list of required addons
+  kickMessage: |-
+    §c§lKICKED!
+    
+    §bReason: §7Missing required addons: %s
+  addons:
+    # Note: The value keys are the addon namespaces.
+    #
+    # Accepted values are
+    # - recommend - Recommends addon to player
+    # - require - Recommends addon to player AND kicks player if they didn't download it
+    # - disable - Disables addon completely
+    #
+    # To add a bypass for an addon give the 'labyutils.bypass.addon.<namespace>'
+    # permission to a player or a group and the action will be prevented.
+    someaddon: recommend
+    someotheraddon: disable
+
+permissions:
+  # Enable or disable specific permissions of the labymod or it's addons
+  enabled: false
+  permissions:
+    # The value on the right is the permission which the player requires to have on the server
+    # Players receive the LabyMod permission if they have 'labyutils.permissions.<value>' or 'labyutils.permissions.*'
+    # In this example you'd have to give a player the 'labyutils.permissions.autotext' permission
+    chat_autotext: autotext
+    # In this example you'd have to give a player the 'labyutils.permissions.tnt_timer' permission
+    tnttimer: tnt_timer
+
+rpc:
+  # Set to true if you want to enable Discord Rich presence
+  enabled: false
+
+  text: 'Playing on example.com'
+  showJoinTime: true
